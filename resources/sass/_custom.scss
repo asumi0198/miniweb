@@ -1,0 +1,117 @@
+
+// custom styles
+label {
+    font-weight: 400 !important;
+}
+
+.btn {
+    padding: 0.5rem 1rem !important;
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+}
+
+@each $name, $color in $grays {
+    .text-gray-#{$name} {
+        color: #{$color} !important;
+    }
+}
+
+$fontSize: ();
+$fontSize: map-merge(
+    (
+        xs: '0.75rem',
+        sm: '0.875rem',
+        base: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
+    ), $fontSize
+);
+
+@each $name, $value in $fontSize {
+    .font-#{$name} {
+        font-size: #{$value} !important;
+    }
+}
+
+$fontWeight: ();
+$fontWeight: map-merge(
+    (
+        hairline: '100',
+        thin: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800'
+    ), $fontWeight
+);
+
+@each $name, $value in $fontWeight {
+    .font-#{$name} {
+        font-weight: #{$value} !important;
+    }
+}
+
+
+$backgroundSize: ();
+$backgroundSize: map-merge(
+    (
+        'auto': auto,
+        'cover': cover,
+        'contain': contain
+    ), $backgroundSize
+);
+
+@each $name, $value in $backgroundSize {
+    .bg-#{$name} {
+        background-size: #{$value} !important;
+    }
+}
+
+$backgroundRepeat: ();
+$backgroundRepeat: map-merge(
+    (
+        'repeat': repeat,
+        'no-repeat': no-repeat,
+        'repeat-x': repeat-x,
+        'repeat-y': repeat-y,
+        'repeat-round': round,
+        'repeat-space': space
+    ), $backgroundRepeat
+);
+
+@each $name, $value in $backgroundRepeat {
+    .bg-#{$name} {
+        background-repeat: #{$value} !important;
+    }
+}
+
+$boxShadow: ();
+$boxShadow: map-merge(
+    (
+        xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+        none: 'none',
+    ), $boxShadow
+);
+
+@each $name, $value in $boxShadow {
+    .shadow-#{$name} {
+        box-shadow: #{$value} !important;
+    }
+}

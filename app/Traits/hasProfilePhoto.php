@@ -40,7 +40,7 @@ trait hasProfilePhoto
      */
     protected function defaultProfilePhotoUrl()
     {
-        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=252f3f&background=EBF4FF';
+        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=252f3f&background=e2e8f0';
     }
 
     /**

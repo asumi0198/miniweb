@@ -1,6 +1,6 @@
 // Typography
 $font-family-sans-serif: 'Poppins', sans-serif;
-$font-size-base: 1rem;
+$font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 $white:    #fff;
@@ -94,6 +94,7 @@ $theme-colors: map-merge(
 // Body
 $body-bg: $gray-300;
 $main-bg: $body-bg;
+$border-color: $gray-200;
 
 $border-radius: .375rem;
 $border-radius-sm: .25rem;
@@ -102,3 +103,13 @@ $border-radius-lg: .5rem;
 // dropdown
 $dropdown-min-width: 15rem;
 $dropdown-padding-y: 0.65rem;
+
+$sizes: () !default;
+$sizes: map-merge((
+    '-10': 2.5rem,
+    '-24': 6rem,
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%
+), $sizes);

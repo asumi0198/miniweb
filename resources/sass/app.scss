@@ -7,15 +7,6 @@
 // Bootstrap
 @import '~admin-lte/build/scss/AdminLTE';
 
-// custom styles
-label {
-    font-weight: 400 !important;
-}
+@import "custom";
 
-.btn {
-    padding: 0.5rem 1rem !important;
-    font-weight: 500 !important;
-    font-size: 0.75rem !important;
-    letter-spacing: 0.1em !important;
-    text-transform: uppercase !important;
-}
+
