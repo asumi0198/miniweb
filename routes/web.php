@@ -31,4 +31,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('photo/{user}', [UpdateProfileInformationController::class, 'deletePhoto'])->name('delete.photo');
         Route::patch('password/{user}', [UpdateProfileInformationController::class, 'updatePassword'])->name('update.password');
     });
+    Route::resource('company', \App\Http\Controllers\CompanyController::class);
+    Route::resource('remote', \App\Http\Controllers\RemoteController::class);
 });

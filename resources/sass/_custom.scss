@@ -3,18 +3,51 @@
 label {
     font-weight: 400 !important;
 }
-
 .btn {
     padding: 0.5rem 1rem !important;
-    font-weight: 500 !important;
+    border-width: 1px !important;
+    border-color: transparent !important;
+    border-radius: 0.375rem !important;
+    font-weight: 600 !important;
     font-size: 0.75rem !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-duration: 150ms !important;
+
+    &:focus {
+        outline: 0 !important;
+    }
+}
+.btn-default {
+    background-color: #ffffff !important;
+    border-color: #d2d6dc !important;
+    color: #374151 !important;
+
+    &:hover {
+        color: #6b7280 !important;
+    }
+
+    &:focus {
+        border-color: #a4cafe !important;
+        box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45) !important;
+    }
+
+    &:active {
+        color: #252f3f !important;
+        background-color: #f9fafb !important;
+    }
 }
 
 @each $name, $color in $grays {
     .text-gray-#{$name} {
         color: #{$color} !important;
+    }
+
+    .bg-gray-#{$name} {
+        background-color: #{$color} !important;
     }
 }
 
@@ -113,5 +146,22 @@ $boxShadow: map-merge(
 @each $name, $value in $boxShadow {
     .shadow-#{$name} {
         box-shadow: #{$value} !important;
+    }
+}
+
+$objectFit: ();
+$objectFit: map-merge(
+    (
+        contain: contain,
+        cover: cover,
+        fill: fill,
+        none: none,
+        scale-down: scale-down
+    ),$objectFit
+);
+
+@each $name, $value in $objectFit {
+    .object-#{$name} {
+        object-fit: #{$value} !important;
     }
 }
