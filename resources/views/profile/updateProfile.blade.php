@@ -22,7 +22,6 @@
                                 <span>Select a New Photo</span>
                                 <input type="file" name="photo" style="display: none" onchange="document.getElementById('photoPreview').src = window.URL.createObjectURL(this.files[0])">
                             </label>
-
                         </div>
                     </div>
                     <div class="form-group">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyStoreRequest;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CompanyController extends Controller
 
     public function index()
     {
-        return view('company.index')->with(['companies' => Company::paginate(6)]);
+        $companies = Company::latest()->paginate(6);
+        return view('company.index', compact('companies'));
     }
 
     public function create()
@@ -23,15 +25,16 @@ class CompanyController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(CompanyStoreRequest $request)
     {
-        //
+        $company = Company::updateOrCreate($request->validated());
+        return redirect(route('company.index'))->with('success', $company->name.' company has been created successfully!');
     }
 
 
     public function show(Company $company)
     {
-        //
+        dd($company);
     }
 
 

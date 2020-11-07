@@ -16,6 +16,12 @@ class ImagePath
         return $filename;
     }
 
+    public function storeCompany (UploadedFile $file, $folder = 'company', $format = 'jpg')
+    {
+        Storage::disk('public')->put($filename = $this->filename($folder, $format), $this->imageStatic($file->getRealPath(), $format));
+        return $filename;
+    }
+
     private function imageStatic ($path, $format)
     {
         return ImageManagerStatic::make($path)->encode($format);

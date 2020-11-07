@@ -5,7 +5,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\Storage;
 
-trait hasProfilePhoto
+trait HasProfilePhoto
 {
     /**
      * Get the URL to the user's profile photo.
@@ -40,7 +40,7 @@ trait hasProfilePhoto
      */
     protected function defaultProfilePhotoUrl()
     {
-        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=252f3f&background=e2e8f0';
+        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=random&background=random';
     }
 
     /**
